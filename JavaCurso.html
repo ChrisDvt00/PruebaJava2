@@ -24,10 +24,11 @@
 .caja-semaforo {
     padding: 10px;
     width: 80px;
-    height: 80;
     border: 1px solid black;
     border-radius: 20px;
     background-color: rgba(12, 12, 12, 0.884);
+    margin: 0 auto;
+
 }
 
 </style>
@@ -43,15 +44,20 @@
  <script>
  
  function cambiarColorLuzSemaforo(id, prender){
-     var color = 'grey'
+     var color= 'gray';
+     if(prender == true) color = id;
+   document.getElementById(id)
+   .style.backgroundColor = color;
+   
+   /*  var color = 'grey'
      if(prender) color = id;
-     document.querySelector('#'+id).style.backgroundColor= color;
+     document.querySelector('#'+id).style.backgroundColor= color;*/
      
 
  }
  
 cambiarColorLuzSemaforo('red', true);
-cambiarColorLuzSemaforo('yellow', true);
+cambiarColorLuzSemaforo('yellow', !true);
 cambiarColorLuzSemaforo('green', !true);
 
 
